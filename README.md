@@ -19,27 +19,45 @@ Prerequisites
 
 • Ensure the required Python packages are listed in the requirements.txt file and can be installed with:
 
-  pip install -r requirements.txt
+-     pip install -r requirements.txt
 ____________________________________________________________________________________________
 Installation
-1.	Clone the repository or download the source code.
-2.	Navigate to the project directory.
+1.	Clone the repository or download the source code:
+   -     git clone https://github.com/DidoGospodinov/pdf-converter.git
+2.	Navigate to the project directory.  
 3.	Run the application script:
-python main.py
+-     python main.py
 ____________________________________________________________________________________________
 Usage
-1.	Start the Application: Launch the script.
-2.	Select a Language: Use the language buttons ("En" for English, "Bg" for Bulgarian) at the top right corner to set your preferred language.
-3.	Select a PDF: Click the "Select PDF Document" button to choose a PDF file.
-4.	Display Text: Click the "Show Text" button to view the text extracted from the PDF.
-5.	Clear Text: Use the "Clear Text" button to clear the text area.
-6.	Save as Word: Click the "Save As" button to convert the displayed text to a Word document.
+1.	Start the Application:
+   
+       • Launch the script.
+   
+2.	Select a Language:
+   
+       • Use the language buttons ("En" for English, "Bg" for Bulgarian) at the top right corner to set your preferred language.
+   
+3.	Select a PDF:
+   
+       • Click the "Select PDF Document" button to choose a PDF file.
+   
+4.	Display Text:
+   
+       • Click the "Show Text" button to view the text extracted from the PDF.
+   
+5.	Clear Text:
+   
+       • Use the "Clear Text" button to clear the text area.
+   
+6.	Save as Word:
+    
+       • Click the "Save As" button to convert the displayed text to a Word document.
 ____________________________________________________________________________________________
 File Structure
 
 •	main.py: Main application script.
 
-•	language.json: Contains translations for supported languages (if present).
+•	language.json: Contains translations for supported languages.
 
 •	requirements.txt: Lists all the necessary dependencies for the project.
 
