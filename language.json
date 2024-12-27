@@ -1,0 +1,22 @@
+{
+    "en": {
+        "title": "PDF Converter",
+        "no_pdf_selected": "No PDF file selected",
+        "select_pdf": "Select PDF Document",
+        "show_text": "Show Text",
+        "clear_text": "Clear Text",
+        "save_as": "Save As",
+        "warning": "Warning!",
+        "no_text_to_convert": "No text to convert"
+    },
+    "bg": {
+        "title": "PDF конвертор",
+        "no_pdf_selected": "Не е избран PDF файл",
+        "select_pdf": "Избери PDF документ",
+        "show_text": "Покажи текст",
+        "clear_text": "Изчисти текста",
+        "save_as": "Запази като",
+        "warning": "Внимание!",
+        "no_text_to_convert": "Липсва текст за конвертиране"
+    }
+}
