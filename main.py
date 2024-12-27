@@ -1,3 +1,13 @@
+"""
+Script Name: PDF converter
+Author: Daniel Gospodinov
+Description: A GUI application built with Python for converting PDF documents to Word (.docx) files.
+The application supports multi-language functionality (English and Bulgarian) and provides a user-friendly interface
+using the CustomTkinter library.
+Date: 2024-12-27
+Version: 1.0.0
+"""
+
 from tkinter import filedialog
 from docx import Document
 from docx.shared import Pt
