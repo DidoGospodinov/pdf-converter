@@ -45,9 +45,11 @@ ctk.set_default_color_theme('dark-blue')
 # Creates the main window
 root = ctk.CTk()
 root.title('PDF converter')
+root.iconbitmap('images/icon.ico')
 root.geometry('800x640')
 
 pdf_file = None
+change_mode_switch = ctk.StringVar(value='on')
 
 
 # Updates the UI language when the app is started or when the language is changed by the user
@@ -61,6 +63,8 @@ def update_language(lang):
     show_text_button.configure(text=translations[lang]["show_text"])
     clear_button.configure(text=translations[lang]["clear_text"])
     save_button.configure(text=translations[lang]["save_as"])
+    mode_switch_label.configure(text=translations[lang]["light_mode"])
+    mode_switch.configure(text=translations[lang]["dark_mode"])
 
     # Changes the color of the language buttons after the language is changed
     if current_language == 'en':
@@ -69,6 +73,18 @@ def update_language(lang):
     elif current_language == 'bg':
         english_button.configure(fg_color='#212121')
         bulgarian_button.configure(fg_color='#1f538d')
+
+
+# Changes the appearance mode to dark or light
+def change_mode():
+    global mode
+
+    if mode == 'dark':
+        mode = 'light'
+    else:
+        mode = 'dark'
+
+    ctk.set_appearance_mode(mode)
 
 
 def switch_language(lang):
@@ -158,13 +174,13 @@ bulgarian_button.pack(side='right', anchor='ne')
 language_icon = ctk.CTkLabel(top_frame, text='🌐', font=('Arial', 18))
 language_icon.pack(side='right', anchor='ne', padx=(50, 5))
 
-browse_pdf_label = ctk.CTkLabel(top_frame, text='Не е избран PDF файл')
+browse_pdf_label = ctk.CTkLabel(top_frame)
 browse_pdf_label.pack(side='left', padx=15, pady=20)
 
-browse_button = ctk.CTkButton(top_frame, text='Избери PDF документ', command=browse_for_pdf)
+browse_button = ctk.CTkButton(top_frame, command=browse_for_pdf)
 browse_button.pack(side='left', padx=15, pady=20)
 
-show_text_button = ctk.CTkButton(top_frame, text='Покажи текст', state='disabled', command=show_text)
+show_text_button = ctk.CTkButton(top_frame, state='disabled', command=show_text)
 show_text_button.pack(side='left', padx=15, pady=20)
 
 text_area = ctk.CTkTextbox(root)
@@ -173,11 +189,21 @@ text_area.pack(pady=10, padx=40, expand=True, fill='both')
 bottom_frame = ctk.CTkFrame(root)
 bottom_frame.pack(side='bottom', pady=10)
 
-clear_button = ctk.CTkButton(bottom_frame, text='Изчисти текста', command=clear_text)
+clear_button = ctk.CTkButton(bottom_frame, command=clear_text)
 clear_button.pack(side='left', padx=15, pady=20)
 
-save_button = ctk.CTkButton(bottom_frame, text='Запази като', state='disabled', command=convert_pdf_to_docx)
+save_button = ctk.CTkButton(bottom_frame, state='disabled', command=convert_pdf_to_docx)
 save_button.pack(side='left', padx=15, pady=20)
+
+mode_switch = ctk.CTkSwitch(bottom_frame,
+                            variable=change_mode_switch,
+                            onvalue='on',
+                            offvalue='off',
+                            font=('Arial', 11),
+                            command=change_mode)
+mode_switch.pack(side='right', padx=15, pady=20)
+mode_switch_label = ctk.CTkLabel(bottom_frame, font=('Arial', 11))
+mode_switch_label.pack(side='right', padx=(15, 0), pady=20)
 #######################################################################################################################
 
 # Updates the UI language on the start of the app

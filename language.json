@@ -7,7 +7,9 @@
         "clear_text": "Clear Text",
         "save_as": "Save As",
         "warning": "Warning!",
-        "no_text_to_convert": "No text to convert"
+        "no_text_to_convert": "No text to convert",
+        "dark_mode": "Dark Mode",
+        "light_mode": "Light Mode"
     },
     "bg": {
         "title": "PDF конвертор",
@@ -17,6 +19,8 @@
         "clear_text": "Изчисти текста",
         "save_as": "Запази като",
         "warning": "Внимание!",
-        "no_text_to_convert": "Липсва текст за конвертиране"
+        "no_text_to_convert": "Липсва текст за конвертиране",
+        "dark_mode": "Тъмен режим",
+        "light_mode": "Светъл режим"
     }
 }
